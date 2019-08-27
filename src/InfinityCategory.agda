@@ -144,7 +144,8 @@ record Category (n : ∞ℕ) {i} : Set (ls i) where
     -- and a cellular prealgebra
     pre : PreAlg hom n fuse fill
   field
-    -- subject to the following "continuity" conditions
+    -- subject to the following "continuity" conditions; as a corollary, these
+    -- ensure the algebra maps n-dimensional cells to n-dimensional edges
     ⦃fuse/nil⦄ : fuse · {tt} ≡ ·
     ⦃fuse/ext⦄ : ∀ {Ψ x y}.{ϕ : 1 + dim hom Ψ ≼ n} → fuse (Ψ ▸ x ⇒ y) {ϕ} ≡ fuse Ψ {↓≼ n ϕ} ▸ fill Ψ x ⇒ fill Ψ y
     ⦃fill/nil⦄ : ∀ {x} → fill · {tt} x ≅ x
